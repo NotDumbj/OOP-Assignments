@@ -7,51 +7,51 @@ using namespace std;
 
 using TimeSlot = pair<string, string>;
 
-namespace timetable {
+namespace time_table {
     using Timetable = map<TimeSlot, vector<Course> , string>;
 }
 
 class Teacher {
     private:
+    int id;
     string name;
     Timetable *teacherTimetable;
-    
+    public:
 
-    // Other relevant data and methods
 };
 
 class Student {
     private:
+    int id;
     string name;
     Timetable *studentTimetable;
-
-    // Other relevant data and methods
+    public:
 };
 
 class Room {
     private:
     string name;
     Timetable *roomTimetable;
-    // Other relevant data and methods
+    public:
 };
 
 class Course {
     private:
+    int id;
     string name;
-
-    // Other relevant data and methods
+    public:
 };
 
 class Timetable{
     private:
-    timetable::Timetable timetable; //used a timetable namespace to name it different form the class Timetable
+    time_table::Timetable timetable; //used a timetable namespace to name it different form the class Timetable
     public:
     Timetable();
 
 };
 
 class UniversitySystem {
-    private:
+    private:    
     vector<Teacher> teachers;
     vector<Student> students;
     vector<Room> rooms;
@@ -63,36 +63,33 @@ class UniversitySystem {
         teachers.push_back(teacher);
     }
 
-    // Implement similar methods for adding students, rooms, and courses
 
     void generateTimetable() {
         
     }
 
     void displayTeacherTimetable(const Teacher& teacher) {
-        // Implement function to display timetable for a teacher
     }
 
     void displaySectionTimetable(int section) {
-        // Implement function to display timetable for a section
     }
 
     void displayStudentTimetable(const Student& student) {
-        // Implement function to display timetable for a student
     }
 
     void displayRoomTimetable(const Room& room) {
-        // Implement function to display timetable for a room
     }
 
     void runQuery(const string& query) {
-        // Implement function to process and answer queries
     }
 };
 
 int main() {
-    // Create objects and interact with the UniversitySystem to manage timetables
+
+
     UniversitySystem uniSystem;
+    Course course;
+
 
     // Populate teachers, students, rooms, and courses
     // uniSystem.addTeacher(...);
@@ -100,7 +97,6 @@ int main() {
     // uniSystem.addRoom(...);
     // uniSystem.addCourse(...);
 
-    // Generate timetable
     uniSystem.generateTimetable();
 
     // Perform queries and display timetables
