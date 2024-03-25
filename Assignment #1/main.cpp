@@ -17,6 +17,19 @@ class Teacher {
     string name;
     Timetable *teacherTimetable;
     public:
+    Teacher(int id, string name, Timetable *teacherTimetable) {
+        this->id = id;  
+        this->name = name;
+        this->teacherTimetable = teacherTimetable;
+        void addTeacher() //creating husk of addTeacher function 
+        {
+
+        }
+        void removeTeacher() //creating husk of removeTeacher function
+        {   
+
+        }
+    }
 
 };
 
@@ -26,6 +39,21 @@ class Student {
     string name;
     Timetable *studentTimetable;
     public:
+    Student(int id, string name, Timetable *studentTimetable) {
+        this->id = id;  
+        this->name = name;
+        this->studentTimetable = studentTimetable;
+
+        void addStudent() //creating husk of addStudent function
+        {  
+
+        }
+        void removeStudent() // creating husk of removeStudent function
+        {
+
+        }
+    }
+
 };
 
 class Room {
@@ -33,6 +61,19 @@ class Room {
     string name;
     Timetable *roomTimetable;
     public:
+    Room(string name, Timetable *roomTimetable) {
+        this->name = name;
+        this->roomTimetable = roomTimetable;
+
+        void addRoom() // creating husk of addRoom function
+        {  
+
+        }
+        void removeRoom() // creating husk of removeRoom function
+        {
+
+        }
+    }
 };
 
 class Course {
@@ -40,6 +81,14 @@ class Course {
     int id;
     string name;
     public:
+    void addCourse()   //
+     {
+
+     }    
+    void removeCourse()  //
+    {
+
+    }
 };
 
 class Timetable{
@@ -47,6 +96,7 @@ class Timetable{
     time_table::Timetable timetable; //used a timetable namespace to name it different form the class Timetable
     public:
     Timetable();
+    
 
 };
 
