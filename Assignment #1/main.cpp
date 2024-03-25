@@ -115,7 +115,7 @@ class UniversitySystem {
 
         }
     
-    
+    }
 
 
     void generateTimetable() {
