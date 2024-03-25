@@ -7,9 +7,7 @@ using namespace std;
 
 using TimeSlot = pair<string, string>;
 
-namespace time_table {
-    using Timetable = map<TimeSlot, vector<Course> , string>;
-}
+using Timetable = map<TimeSlot, vector<Course>>;
 
 class Teacher {
     private:
@@ -42,11 +40,11 @@ class Course {
     public:
 };
 
-class Timetable{
+class Time_table{
     private:
-    time_table::Timetable timetable; //used a timetable namespace to name it different form the class Timetable
+    Timetable timetable; //used a timetable namespace to name it different form the class Timetable
     public:
-    Timetable();
+    Time_table();
 
 };
 
