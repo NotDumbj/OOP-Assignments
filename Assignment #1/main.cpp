@@ -19,16 +19,7 @@ class Teacher {
         this->id = id;  
         this->name = name;
         this->teacherTimetable = teacherTimetable;
-        void addTeacher() //creating husk of addTeacher function 
-        {
-
-        }
-        void removeTeacher() //creating husk of removeTeacher function
-        {   
-
-        }
-    }
-
+       
 };
 
 class Student {
@@ -42,14 +33,7 @@ class Student {
         this->name = name;
         this->studentTimetable = studentTimetable;
 
-        void addStudent() //creating husk of addStudent function
-        {  
-
-        }
-        void removeStudent() // creating husk of removeStudent function
-        {
-
-        }
+        
     }
 
 };
@@ -63,14 +47,7 @@ class Room {
         this->name = name;
         this->roomTimetable = roomTimetable;
 
-        void addRoom() // creating husk of addRoom function
-        {  
-
-        }
-        void removeRoom() // creating husk of removeRoom function
-        {
-
-        }
+        
     }
 };
 
@@ -79,14 +56,7 @@ class Course {
     int id;
     string name;
     public:
-    void addCourse()   //
-     {
-
-     }    
-    void removeCourse()  //
-    {
-
-    }
+    
 };
 
 class Time_table{
@@ -108,6 +78,41 @@ class UniversitySystem {
     public:
     void addTeacher(const Teacher& teacher) {
         teachers.push_back(teacher);
+    }
+
+    void removeTeacher() //creating husk of removeTeacher function
+        {   
+
+        }
+
+    void addStudent(const Student& student) //creating husk of addStudent function
+        {  
+            students.push_back(student);
+        }
+
+    void removeStudent() // creating husk of removeStudent function
+        {
+
+        }
+
+    void addRoom(const Course& course) // creating husk of addRoom function
+        {  
+            courses.push_back(course);
+        }
+    void removeRoom() // creating husk of removeRoom function
+        {
+
+        }
+
+    void addCourse(const room& room)   // creating husk of addCourse function
+        {
+            rooms.push_back(room);
+        }    
+    void removeCourse()  // creating husk of removeCourse function
+        {
+
+        }
+    
     }
 
 
