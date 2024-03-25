@@ -7,6 +7,8 @@ using namespace std;
 
 using TimeSlot = pair<string, string>;
 
+class Course{};
+
 using Timetable = map<TimeSlot, vector<Course>>;
 
 class Teacher {
@@ -19,7 +21,7 @@ class Teacher {
         this->id = id;  
         this->name = name;
         this->teacherTimetable = teacherTimetable;
-       
+    }    
 };
 
 class Student {
@@ -104,7 +106,7 @@ class UniversitySystem {
 
         }
 
-    void addCourse(const room& room)   // creating husk of addCourse function
+    void addCourse(const Room& room)   // creating husk of addCourse function
         {
             rooms.push_back(room);
         }    
@@ -113,7 +115,7 @@ class UniversitySystem {
 
         }
     
-    }
+    
 
 
     void generateTimetable() {
