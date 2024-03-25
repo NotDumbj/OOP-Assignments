@@ -104,7 +104,7 @@ class UniversitySystem {
 
         }
 
-    void addCourse(const room& room)   // creating husk of addCourse function
+    void addCourse(const Room& room)   // creating husk of addCourse function
         {
             rooms.push_back(room);
         }    
@@ -112,10 +112,7 @@ class UniversitySystem {
         {
 
         }
-    
-    }
-
-
+        
     void generateTimetable() {
         
     }
