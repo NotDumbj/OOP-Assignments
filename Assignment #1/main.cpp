@@ -19,6 +19,7 @@ class Teacher {
         this->id = id;  
         this->name = name;
         this->teacherTimetable = teacherTimetable;
+    }
        
 };
 
@@ -112,8 +113,9 @@ class UniversitySystem {
         {
 
         }
-        
-    void generateTimetable() {
+
+    void generateTimetable() 
+    {
         
     }
 
