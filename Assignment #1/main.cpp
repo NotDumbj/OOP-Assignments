@@ -5,8 +5,13 @@
 
 using namespace std;
 
+// Forward declarations
+class Teacher;
+class Room;
+
 // Define the Timetable type
 using TimeSlot = pair<string, string>;
+class Course; // Forward declaration for Course class
 using Timetable = map<TimeSlot, vector<Course>>;
 
 // Define the Course class
@@ -24,13 +29,13 @@ public:
     }
 };
 
-// Define the Time_table class
-class Time_table {
+// Define the TimeTable class
+class TimeTable {
 private:
     Timetable timetable;
 
 public:
-    Time_table() {}
+    TimeTable() {}
 
     void addCourse(const Course& course, const TimeSlot& timeSlot) {
         timetable[timeSlot].push_back(course);
@@ -46,7 +51,7 @@ class Teacher {
 private:
     int id;
     string name;
-    Time_table* teacherTimetable;
+    TimeTable* teacherTimetable;
 
 public:
     Teacher(int i, string nam) : id(i), name(nam) {}
@@ -61,7 +66,7 @@ class Student {
 private:
     int id;
     string name;
-    Time_table* studentTimetable;
+    TimeTable* studentTimetable;
 
 public:
     Student(int i, string nam) : id(i), name(nam) {}
@@ -75,7 +80,7 @@ public:
 class Room {
 private:
     string name;
-    Time_table* roomTimetable;
+    TimeTable* roomTimetable;
 
 public:
     Room(string nam) : name(nam) {}
@@ -92,7 +97,7 @@ private:
     vector<Student> students;
     vector<Room> rooms;
     vector<Course> courses;
-    Time_table timetable;
+    TimeTable timetable;
 
 public:
     void addTeacher(const Teacher& teacher) {
