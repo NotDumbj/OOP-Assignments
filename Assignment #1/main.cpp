@@ -8,6 +8,7 @@ using namespace std;
 // Forward declarations
 class Teacher;
 class Room;
+class Section;
 
 // Define the Timetable type
 using TimeSlot = pair<string, string>;
@@ -19,12 +20,17 @@ class Course {
 private:
     int id;
     string name;
-    Teacher* teacher;
+    vector<Teacher*> teacher; // because there can be more than one teacher to teach a subject
     Room* room;
 public:
 
     Course(int i, string nam) : id(i), name(nam) {}
-    Course(int i, string nam, Teacher* other, Room* rooom) : id(i), name(nam), teacher(other), room(rooom) {}
+    Course(int i, string nam, Teacher* other) : id(i), name(nam){
+        teacher.push_back(other);
+    }
+    Course(int i, string nam, Teacher* other, Room* rooom) : id(i), name(nam), room(rooom) {
+        teacher.push_back(other);
+    }
 
     string getName() const {
         return name;
@@ -38,10 +44,16 @@ class Teacher {
 private:
     int id;
     string name;
+    Course* course;
+    vector<Section*> sections;
+    vector<Room*> rooms;
     TimeTable* teacherTimetable;
 
 public:
     Teacher(int i, string nam) : id(i), name(nam) {}
+    Teacher(int i, string nam, Course& other) : id(i) , name(nam){
+        course = &other;
+    }
 
     string getName() const {
         return name;
@@ -53,6 +65,8 @@ class Student {
 private:
     int id;
     string name;
+    Section* section;
+    vector<Course*> courses;
     TimeTable* studentTimetable;
 
 public:
@@ -63,6 +77,13 @@ public:
     }
 };
 
+// Define the Section class
+
+class Section {
+private:
+    vector<Student> students;
+
+};
 // Define the Room class
 class Room {
 private:
@@ -85,20 +106,20 @@ public:
     TimeTable() {}
 
 
-    string time8_9 = "8:30 - 9:30";
-    string time9_10 = "9:30 - 10:30";
-    string time10_11 = "10:30 - 11:30";
-    string time11_12 = "11:30 - 12:30";
-    string time12_1 = "12:30 - 1:30";
-    string time1_2 = "1:30 - 2:30";
+    const string time8_9 = "8:30 - 9:30";
+    const string time9_10 = "9:30 - 10:30";
+    const string time10_11 = "10:30 - 11:30";
+    const string time11_12 = "11:30 - 12:30";
+    const string time12_1 = "12:30 - 1:30";
+    const string time1_2 = "1:30 - 2:30";
 
-    string daym = "Monday";
-    string dayt = "Tuesday";
-    string dayw = "Wednesday";
-    string dayr = "Thursday";
-    string dayf = "Friday";
-    string days = "Saturday";
-    string dayu = "Sunday";
+    const string daym = "Monday";
+    const string dayt = "Tuesday";
+    const string dayw = "Wednesday";
+    const string dayr = "Thursday";
+    const string dayf = "Friday";
+    const string days = "Saturday";
+    const string dayu = "Sunday";
     void addCourse(const Course& course, const TimeSlot& timeSlot) {
         timetable[timeSlot].push_back(course);
     }
@@ -122,28 +143,31 @@ public:
 
     //predefined timetable
     UniversitySystem(){
-        Teacher pteacher1(1, "Sir Raja");
-        Teacher pteacher2(2, "Sir Waleed");
-        Teacher pteacher3(3, "Sir Tamim");
-        Teacher pteacher4(4, "Sir Adeel");
-        Teacher pteacher5(5, "Sir Daniyal");
-        Teacher pteacher6(6, "Maam Razia");
-        Teacher pteacher7(7, "Sir Ahmad");
-        Teacher pteacher8(8, "Maam Sadaf");
-
-        Room room1("4-18");
-        Room room2("4-19");
-        Room lab1("4-01");
-        Room lab2("4-02");
-
+        
         Course pcourse1(1, "OOP");
         Course pcourse2(2, "C++");
         Course pcourse3(3, "Java");
         Course pcourse4(4, "Python");
-        Course pcourse5(5, "PHP");
-        Course pcourse6(6, "HTML");
-        Course pcourse7(7, "CSS");
-        Course pcourse8(8, "JavaScript");
+        Course pcourse5(5, "HTML");
+        Course pcourse6(6, "CSS");
+        Course pcourse7(7, "JavaScript");
+        
+        Teacher pteacher1(1, "Sir Raja", pcourse2);
+        Teacher pteacher2(2, "Sir Waleed", pcourse3);
+        Teacher pteacher3(3, "Sir Tamim", pcourse1);
+        Teacher pteacher4(4, "Sir Adeel", pcourse4);
+        Teacher pteacher5(5, "Sir Daniyal", pcourse5);
+        Teacher pteacher6(6, "Maam Razia", pcourse6);
+        Teacher pteacher7(7, "Sir Ahmad", pcourse7);
+        Teacher pteacher8(8, "Maam Sadaf", pcourse7);
+
+        Room room1("4-17");
+        Room room2("4-18");
+        Room room3("4-19");
+        Room lab1("4-01");
+        Room lab2("4-02");
+
+
 }
 
     void addTeacher(const Teacher& teacher) {
