@@ -12,9 +12,9 @@ class Room;
 // Define the Timetable type
 using TimeSlot = pair<string, string>;
 class Course; // Forward declaration for Course class
+
 using Timetable = map<TimeSlot, vector<Course>>;
 
-// Define the Course class
 class Course {
 private:
     int id;
@@ -22,6 +22,8 @@ private:
     Teacher* teacher;
     Room* room;
 public:
+
+    Course(int i, string nam) : id(i), name(nam) {}
     Course(int i, string nam, Teacher* other, Room* rooom) : id(i), name(nam), teacher(other), room(rooom) {}
 
     string getName() const {
@@ -29,24 +31,9 @@ public:
     }
 };
 
-// Define the TimeTable class
-class TimeTable {
-private:
-    Timetable timetable;
 
-public:
-    TimeTable() {}
 
-    void addCourse(const Course& course, const TimeSlot& timeSlot) {
-        timetable[timeSlot].push_back(course);
-    }
 
-    const Timetable& getTimetable() const {
-        return timetable;
-    }
-};
-
-// Define the Teacher class
 class Teacher {
 private:
     int id;
@@ -90,6 +77,38 @@ public:
     }
 };
 
+class TimeTable {
+private:
+    Timetable timetable;
+
+public:
+    TimeTable() {}
+
+
+    string time8_9 = "8:30 - 9:30";
+    string time9_10 = "9:30 - 10:30";
+    string time10_11 = "10:30 - 11:30";
+    string time11_12 = "11:30 - 12:30";
+    string time12_1 = "12:30 - 1:30";
+    string time1_2 = "1:30 - 2:30";
+
+    string daym = "Monday";
+    string dayt = "Tuesday";
+    string dayw = "Wednesday";
+    string dayr = "Thursday";
+    string dayf = "Friday";
+    string days = "Saturday";
+    string dayu = "Sunday";
+    void addCourse(const Course& course, const TimeSlot& timeSlot) {
+        timetable[timeSlot].push_back(course);
+    }
+
+    const Timetable& getTimetable() const {
+        return timetable;
+    }
+
+
+};
 // Define the UniversitySystem class
 class UniversitySystem {
 private:
@@ -100,6 +119,33 @@ private:
     TimeTable timetable;
 
 public:
+
+    //predefined timetable
+    UniversitySystem(){
+        Teacher pteacher1(1, "Sir Raja");
+        Teacher pteacher2(2, "Sir Waleed");
+        Teacher pteacher3(3, "Sir Tamim");
+        Teacher pteacher4(4, "Sir Adeel");
+        Teacher pteacher5(5, "Sir Daniyal");
+        Teacher pteacher6(6, "Maam Razia");
+        Teacher pteacher7(7, "Sir Ahmad");
+        Teacher pteacher8(8, "Maam Sadaf");
+
+        Room room1("4-18");
+        Room room2("4-19");
+        Room lab1("4-01");
+        Room lab2("4-02");
+
+        Course pcourse1(1, "OOP");
+        Course pcourse2(2, "C++");
+        Course pcourse3(3, "Java");
+        Course pcourse4(4, "Python");
+        Course pcourse5(5, "PHP");
+        Course pcourse6(6, "HTML");
+        Course pcourse7(7, "CSS");
+        Course pcourse8(8, "JavaScript");
+}
+
     void addTeacher(const Teacher& teacher) {
         teachers.push_back(teacher);
     }
@@ -118,9 +164,9 @@ public:
 
     void generateTimetable() {
         // For simplicity, let's generate a sample timetable
-        TimeSlot slot1 = make_pair("8:30", "Monday");
-        TimeSlot slot2 = make_pair("10:00", "Wednesday");
-        TimeSlot slot3 = make_pair("13:00", "Friday");
+        TimeSlot slot1 = make_pair("8:30 - 9:30", "Monday");
+        TimeSlot slot2 = make_pair("9:30 - 10:30", "Wednesday");
+        TimeSlot slot3 = make_pair("10:30 - 11:00", "Friday");
 
         for (const auto& course : courses) {
             timetable.addCourse(course, slot1);
