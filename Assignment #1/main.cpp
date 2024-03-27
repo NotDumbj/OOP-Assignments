@@ -2,6 +2,9 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <unordered_set>
+#include <algorithm>
+#include <iomanip>
 
 using namespace std;
 
@@ -9,50 +12,52 @@ using namespace std;
 class Teacher;
 class Room;
 class Section;
+class Course;
+class Timetable;
 
-// Define the Timetable type
+// Define the Timetable types
 using TimeSlot = pair<string, string>;
-class Course; // Forward declaration for Course class
+using CourseTimetable = map<TimeSlot, vector<Course>>;
+using SectionTimetable = map<TimeSlot, vector<Section>>;
+using TeacherTimetable = map<TimeSlot, vector<Teacher>>;
+using RoomTimetable = map<TimeSlot, vector<Room>>;
 
-using Timetable = map<TimeSlot, vector<Course>>;
+struct TimeStruct {
+    const vector<string> hours = {"8:30 - 9:30", "9:30 - 10:30", "10:30 - 11:30", "11:30 - 12:30", "12:30 - 1:30", "1:30 - 2:30"};
+};
+
+struct Week {
+    const vector<string> day = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+};
 
 class Course {
 private:
     int id;
     string name;
-    vector<Teacher*> teacher; // because there can be more than one teacher to teach a subject
+    vector<Teacher*> teachers;
     Room* room;
 public:
+    Course(int i, string nam) : id(i), name(nam), room(nullptr) {}
 
-    Course(int i, string nam) : id(i), name(nam) {}
-    Course(int i, string nam, Teacher* other) : id(i), name(nam){
-        teacher.push_back(other);
-    }
-    Course(int i, string nam, Teacher* other, Room* rooom) : id(i), name(nam), room(rooom) {
-        teacher.push_back(other);
+    void addTeacher(Teacher* teacher) {
+        teachers.push_back(teacher);
     }
 
     string getName() const {
         return name;
     }
 };
-
-
-
 
 class Teacher {
 private:
     int id;
     string name;
-    Course* course;
-    vector<Section*> sections;
-    vector<Room*> rooms;
-    TimeTable* teacherTimetable;
-
+    vector<Course*> courses;
 public:
     Teacher(int i, string nam) : id(i), name(nam) {}
-    Teacher(int i, string nam, Course& other) : id(i) , name(nam){
-        course = &other;
+
+    void addCourse(Course* course) {
+        courses.push_back(course);
     }
 
     string getName() const {
@@ -60,36 +65,38 @@ public:
     }
 };
 
-// Define the Student class
 class Student {
 private:
     int id;
     string name;
     Section* section;
-    vector<Course*> courses;
-    TimeTable* studentTimetable;
-
 public:
-    Student(int i, string nam) : id(i), name(nam) {}
+    Student(int i, string nam) : id(i), name(nam), section(nullptr) {}
 
     string getName() const {
         return name;
     }
 };
 
-// Define the Section class
-
 class Section {
 private:
-    vector<Student> students;
+    char name;
+    vector<Student*> students;
+public:
+    Section(char nam) : name(nam) {}
 
+    void addStudent(Student* student) {
+        students.push_back(student);
+    }
+
+    char getName() const {
+        return name;
+    }
 };
-// Define the Room class
+
 class Room {
 private:
     string name;
-    TimeTable* roomTimetable;
-
 public:
     Room(string nam) : name(nam) {}
 
@@ -98,139 +105,161 @@ public:
     }
 };
 
-class TimeTable {
+class Timetable {
 private:
-    Timetable timetable;
+    CourseTimetable courseTimetable;
+    SectionTimetable sectionTimetable;
+    TeacherTimetable teacherTimetable;
+    RoomTimetable roomTimetable;
 
 public:
-    TimeTable() {}
+    Timetable() {}
 
-
-    const string time8_9 = "8:30 - 9:30";
-    const string time9_10 = "9:30 - 10:30";
-    const string time10_11 = "10:30 - 11:30";
-    const string time11_12 = "11:30 - 12:30";
-    const string time12_1 = "12:30 - 1:30";
-    const string time1_2 = "1:30 - 2:30";
-
-    const string daym = "Monday";
-    const string dayt = "Tuesday";
-    const string dayw = "Wednesday";
-    const string dayr = "Thursday";
-    const string dayf = "Friday";
-    const string days = "Saturday";
-    const string dayu = "Sunday";
     void addCourse(const Course& course, const TimeSlot& timeSlot) {
-        timetable[timeSlot].push_back(course);
+        courseTimetable[timeSlot].push_back(course);
     }
 
-    const Timetable& getTimetable() const {
-        return timetable;
+    void addSection(const Section& section, const TimeSlot& timeSlot) {
+        sectionTimetable[timeSlot].push_back(section);
     }
 
+    void addRoom(const Room& room, const TimeSlot& timeSlot) {
+        roomTimetable[timeSlot].push_back(room);
+    }
 
+    void addTeacher(const Teacher& teacher, const TimeSlot& timeSlot) {
+        teacherTimetable[timeSlot].push_back(teacher);
+    }
+
+    const CourseTimetable& getCourseTimetable() const {
+        return courseTimetable;
+    }
+
+    const SectionTimetable& getSectionTimetable() const {
+        return sectionTimetable;
+    }
+
+    const TeacherTimetable& getTeacherTimetable() const {
+        return teacherTimetable;
+    }
+
+    const RoomTimetable& getRoomTimetable() const {
+        return roomTimetable;
+    }
 };
-// Define the UniversitySystem class
+
 class UniversitySystem {
 private:
     vector<Teacher> teachers;
     vector<Student> students;
     vector<Room> rooms;
     vector<Course> courses;
-    TimeTable timetable;
+    Timetable timetable;
 
 public:
+    UniversitySystem() {
+        // Add teachers
+        Teacher teacher1(1, "Sir Raja");
+        Teacher teacher2(2, "Sir Waleed");
+        Teacher teacher3(3, "Sir Tamim");
+        Teacher teacher4(4, "Sir Adeel");
+        teachers = {teacher1, teacher2, teacher3, teacher4};
 
-    //predefined timetable
-    UniversitySystem(){
-        
-        Course pcourse1(1, "OOP");
-        Course pcourse2(2, "C++");
-        Course pcourse3(3, "Java");
-        Course pcourse4(4, "Python");
-        Course pcourse5(5, "HTML");
-        Course pcourse6(6, "CSS");
-        Course pcourse7(7, "JavaScript");
-        
-        Teacher pteacher1(1, "Sir Raja", pcourse2);
-        Teacher pteacher2(2, "Sir Waleed", pcourse3);
-        Teacher pteacher3(3, "Sir Tamim", pcourse1);
-        Teacher pteacher4(4, "Sir Adeel", pcourse4);
-        Teacher pteacher5(5, "Sir Daniyal", pcourse5);
-        Teacher pteacher6(6, "Maam Razia", pcourse6);
-        Teacher pteacher7(7, "Sir Ahmad", pcourse7);
-        Teacher pteacher8(8, "Maam Sadaf", pcourse7);
+        // Add courses
+        Course oop(1, "OOP");
+        Course cpp(2, "C++");
+        Course java(3, "Java");
+        Course python(4, "Python");
+        courses = {oop, cpp, java, python};
 
+        // Assign teachers to courses
+        cpp.addTeacher(&teacher1);
+        java.addTeacher(&teacher2);
+        oop.addTeacher(&teacher3);
+        python.addTeacher(&teacher4);
+
+        // Add rooms
         Room room1("4-17");
         Room room2("4-18");
         Room room3("4-19");
-        Room lab1("4-01");
-        Room lab2("4-02");
+        rooms = {room1, room2, room3};
 
-
-}
-
-    void addTeacher(const Teacher& teacher) {
-        teachers.push_back(teacher);
-    }
-
-    void addStudent(const Student& student) {
-        students.push_back(student);
-    }
-
-    void addCourse(const Course& course) {
-        courses.push_back(course);
-    }
-
-    void addRoom(const Room& room) {
-        rooms.push_back(room);
+        // Generate timetable
+        generateTimetable();
     }
 
     void generateTimetable() {
-        // For simplicity, let's generate a sample timetable
-        TimeSlot slot1 = make_pair("8:30 - 9:30", "Monday");
-        TimeSlot slot2 = make_pair("9:30 - 10:30", "Wednesday");
-        TimeSlot slot3 = make_pair("10:30 - 11:00", "Friday");
+        vector<TimeSlot> timeslots;
+        for (const auto& hour : TimeStruct().hours) {
+            for (const auto& day : Week().day) {
+                timeslots.push_back(make_pair(hour, day));
+            }
+        }
 
-        for (const auto& course : courses) {
-            timetable.addCourse(course, slot1);
-            timetable.addCourse(course, slot2);
-            timetable.addCourse(course, slot3);
+        for (const auto& slot : timeslots) {
+            // For simplicity, assign courses, teachers, rooms randomly to timeslots
+            int courseIndex = rand() % courses.size();
+            int teacherIndex = rand() % teachers.size();
+            int roomIndex = rand() % rooms.size();
+
+            timetable.addCourse(courses[courseIndex], slot);
+            timetable.addTeacher(teachers[teacherIndex], slot);
+            timetable.addRoom(rooms[roomIndex], slot);
         }
     }
 
-    void displayTeacherTimetable(const Teacher& teacher) {
-        cout << "Timetable for Teacher: " << teacher.getName() << endl;
-        const Timetable& teacherTimetable = timetable.getTimetable();
+    void displayTimetable() {
+        const CourseTimetable& courseTimetable = timetable.getCourseTimetable();
+        const TeacherTimetable& teacherTimetable = timetable.getTeacherTimetable();
+        const RoomTimetable& roomTimetable = timetable.getRoomTimetable();
 
-        for (const auto& slot_courses : teacherTimetable) {
-            for (const auto& course : slot_courses.second) {
-                if (course.getName() == teacher.getName()) {
-                    cout << "Time: " << slot_courses.first.first << " Day: " << slot_courses.first.second << " Course: " << course.getName() << endl;
+        for (const auto& day : Week().day) {
+            cout << "========" << endl;
+            cout << "  " << day << endl;
+            cout << "--------" << endl;
+
+            for (const auto& hour : TimeStruct().hours) {
+                cout << hour << endl;
+
+                // Print course, teacher, room
+                const TimeSlot currentSlot = make_pair(hour, day);
+
+                // Print course, teacher, room for current slot
+                if (courseTimetable.find(currentSlot) != courseTimetable.end()) {
+                    const vector<Course>& courses = courseTimetable.at(currentSlot);
+                    const vector<Teacher>& teachers = teacherTimetable.at(currentSlot);
+                    const vector<Room>& rooms = roomTimetable.at(currentSlot);
+
+                    for (size_t i =0; i < max({courses.size(), teachers.size(), rooms.size()}); ++i) {
+                        // Print course
+                        if (i < courses.size())
+                            cout << setw(10) << left << courses[i].getName();
+                        else
+                            cout << setw(10) << left << " ";
+
+                        // Print teacher
+                        if (i < teachers.size())
+                            cout << setw(10) << left << teachers[i].getName();
+                        else
+                            cout << setw(10) << left << " ";
+
+                        // Print room
+                        if (i < rooms.size())
+                            cout << setw(10) << left << rooms[i].getName();
+                        else
+                            cout << setw(10) << left << " ";
+
+                        cout << endl;
+                    }
+                } else {
+                    cout << "No class" << endl;
                 }
-            }
-        }
-    }
 
-    void displayStudentTimetable(const Student& student) {
-        cout << "Timetable for Student: " << student.getName() << endl;
-        const Timetable& studentTimetable = timetable.getTimetable();
-
-        for (const auto& slot_courses : studentTimetable) {
-            for (const auto& course : slot_courses.second) {
-                cout << "Time: " << slot_courses.first.first << " Day: " << slot_courses.first.second << " Course: " << course.getName() << endl;
-            }
-        }
-    }
-
-    void displayRoomTimetable(const Room& room) {
-        cout << "Timetable for Room: " << room.getName() << endl;
-        const Timetable& roomTimetable = timetable.getTimetable();
-
-        for (const auto& slot_courses : roomTimetable) {
-            for (const auto& course : slot_courses.second) {
-                if (course.getName() == room.getName()) {
-                    cout << "Time: " << slot_courses.first.first << " Day: " << slot_courses.first.second << " Course: " << course.getName() << endl;
+                // Add break points
+                if (hour != TimeStruct().hours.back()) {
+                    cout << "       \\ /" << endl;
+                    cout << "        |" << endl;
+                    cout << "       / \\" << endl;
                 }
             }
         }
@@ -239,33 +268,6 @@ public:
 
 int main() {
     UniversitySystem uniSystem;
-
-    // Populate teachers, students, rooms, and courses
-    Teacher teacher1(1, "John");
-    Teacher teacher2(2, "Alice");
-    uniSystem.addTeacher(teacher1);
-    uniSystem.addTeacher(teacher2);
-
-    Student student1(1, "Bob");
-    Student student2(2, "Emma");
-    uniSystem.addStudent(student1);
-    uniSystem.addStudent(student2);
-
-    Room room1("Room 101");
-    Room room2("Room 102");
-    uniSystem.addRoom(room1);
-    uniSystem.addRoom(room2);
-
-    Course course1(1, "Math", &teacher1, &room1);
-    Course course2(2, "Science", &teacher2, &room2);
-    uniSystem.addCourse(course1);
-    uniSystem.addCourse(course2);
-
-    // Generate and display timetables
-    uniSystem.generateTimetable();
-    uniSystem.displayTeacherTimetable(teacher1);
-    uniSystem.displayStudentTimetable(student2);
-    uniSystem.displayRoomTimetable(room2);
-
+    uniSystem.displayTimetable();
     return 0;
 }
