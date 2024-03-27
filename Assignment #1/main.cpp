@@ -46,6 +46,9 @@ public:
     string getName() const {
         return name;
     }
+    void getid() const {
+        return id;
+    }
 };
 
 class Teacher {
@@ -63,6 +66,9 @@ public:
     string getName() const {
         return name;
     }
+    void getid() const { // making a function to return teacher id
+        return id;
+    }
 };
 
 class Student {
@@ -75,6 +81,9 @@ public:
 
     string getName() const {
         return name;
+    }
+    void getid() const { // making a function to return student id
+        return id;
     }
 };
 
@@ -92,6 +101,7 @@ public:
     char getName() const {
         return name;
     }
+
 };
 
 class Room {   // Defining the room
