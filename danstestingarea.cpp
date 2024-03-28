@@ -27,7 +27,7 @@ struct TimeStruct { // Defining the time slots
 };
 
 struct Week { // Defining the days of the week
-    const vector<string> day = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+    const vector<string> day = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 };
 
 class Course {
