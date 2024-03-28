@@ -23,11 +23,11 @@ using TeacherTimetable = map<TimeSlot, vector<Teacher>>;
 using RoomTimetable = map<TimeSlot, vector<Room>>;
 
 struct TimeStruct { // Defining the time slots
-    const vector<string> hours = {"8:30 - 9:30", "9:30 - 10:30", "10:30 - 11:30", "11:30 - 12:30", "12:30 - 1:30", "1:30 - 2:30"};
+    const vector<string> hours = { "8:30 - 9:30", "9:30 - 10:30", "10:30 - 11:30", "11:30 - 12:30", "12:30 - 1:30", "1:30 - 2:30" };
 };
 
 struct Week { // Defining the days of the week
-    const vector<string> day = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    const vector<string> day = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 };
 
 class Course {
@@ -46,7 +46,7 @@ public:
     string getName() const {
         return name;
     }
-    void getid() const {
+    int getid() const {
         return id;
     }
 };
@@ -66,7 +66,7 @@ public:
     string getName() const {
         return name;
     }
-    void getid() const { // making a function to return teacher id
+    int getid() const { // making a function to return teacher id
         return id;
     }
 };
@@ -82,7 +82,7 @@ public:
     string getName() const {
         return name;
     }
-    void getid() const { // making a function to return student id
+    int getid() const { // making a function to return student id
         return id;
     }
 };
@@ -158,7 +158,7 @@ public:
     }
 };
 
-class UniversitySystem {    
+class UniversitySystem {
 private:
     vector<Teacher> teachers;
     vector<Student> students;
@@ -173,14 +173,14 @@ public:
         Teacher teacher2(2, "Sir Waleed");
         Teacher teacher3(3, "Sir Tamim");
         Teacher teacher4(4, "Sir Adeel");
-        teachers = {teacher1, teacher2, teacher3, teacher4};
+        teachers = { teacher1, teacher2, teacher3, teacher4 };
 
         // Add courses
         Course oop(1, "OOP");
         Course cpp(2, "C++");
         Course java(3, "Java");
         Course python(4, "Python");
-        courses = {oop, cpp, java, python};
+        courses = { oop, cpp, java, python };
 
         // Assign teachers to courses
         cpp.addTeacher(&teacher1);
@@ -192,7 +192,7 @@ public:
         Room room1("4-17");
         Room room2("4-18");
         Room room3("4-19");
-        rooms = {room1, room2, room3};
+        rooms = { room1, room2, room3 };
 
         // Generate timetable
         generateTimetable();
@@ -240,7 +240,7 @@ public:
                     const vector<Teacher>& teachers = teacherTimetable.at(currentSlot);
                     const vector<Room>& rooms = roomTimetable.at(currentSlot);
 
-                    for (size_t i =0; i < max({courses.size(), teachers.size(), rooms.size()}); ++i) {
+                    for (size_t i = 0; i < max({ courses.size(), teachers.size(), rooms.size() }); ++i) {
                         // Print course
                         if (i < courses.size())
                             cout << setw(10) << left << courses[i].getName();
@@ -261,7 +261,8 @@ public:
 
                         cout << endl;
                     }
-                } else {
+                }
+                else {
                     cout << "No class" << endl;
                 }
 
