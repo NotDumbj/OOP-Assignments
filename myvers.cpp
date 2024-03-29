@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream> // for file handling
 #include <vector>
 #include <map>
 #include <string>
@@ -22,11 +23,11 @@ using TeacherTimetable = map<TimeSlot, vector<Teacher>>;
 using RoomTimetable = map<TimeSlot, vector<Room>>;
 
 struct TimeStruct {
-    const vector<string> hours = {"8:30 - 9:30", "9:30 - 10:30", "10:30 - 11:30", "11:30 - 12:30", "12:30 - 1:30", "1:30 - 2:30"};
+    const vector<string> hours = { "8:30 - 9:30", "9:30 - 10:30", "10:30 - 11:30", "11:30 - 12:30", "12:30 - 1:30", "1:30 - 2:30" };
 };
 
 struct Week {
-    const vector<string> day = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    const vector<string> day = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
 };
 
 class Course {
@@ -43,7 +44,7 @@ public:
         teachers.push_back(teacher);
     }
 
-    vector<Teacher*> getTeachers(){
+    vector<Teacher*> getTeachers() {
         return teachers;
     }
     string getName() const {
@@ -241,6 +242,14 @@ public:
         rooms.emplace_back("Room 4");
         rooms.emplace_back("Room 5");
 
+        for (size_t i = 0; i < sections.size(); ++i) {
+            // Assign each section to a course
+            sections[i].addCourse(&courses[i % courses.size()]);
+
+            // Assign each section to a teacher
+            teachers[i % teachers.size()].addSection(&sections[i]);
+        }
+
         // Generate timetable
         generateTimetable();
     }
@@ -341,13 +350,15 @@ public:
                                 if (roomIt != roomTimetable.end()) {
                                     cout << "Room: " << roomIt->second.front().getName() << endl;
                                 }
-                            } else {
+                            }
+                            else {
                                 cout << "No course assigned" << endl;
                             }
                             cout << endl;
                         }
                     }
-                } else {
+                }
+                else {
                     // Display cross for empty slot
                     cout << hour << endl;
                     cout << "X" << endl << endl;
@@ -369,7 +380,7 @@ public:
             cout << day << endl;
             cout << "-------------" << endl;
 
-            bool sectionPrinted = true;
+            bool sectionPrinted = false; // Initialize to false
 
             for (const auto& hour : TimeStruct().hours) {
                 TimeSlot slot = make_pair(hour, day);
@@ -385,24 +396,29 @@ public:
                             auto teacherIt = teacherTimetable.find(slot);
                             if (teacherIt != teacherTimetable.end()) {
                                 cout << "Teacher: ";
+                                bool teacherPrinted = false;
                                 for (const auto& teacher : teacherIt->second) {
                                     for (const auto& sec : teacher.getSections()) {
                                         if (sec->getName() == section.getName()) {
                                             cout << teacher.getName() << ", ";
+                                            teacherPrinted = true;
                                             break;
                                         }
                                     }
                                 }
+                                if (!teacherPrinted) {
+                                    cout << "No teacher assigned";
+                                }
                                 cout << endl;
                             }
 
-                            sectionPrinted = true;
+                            sectionPrinted = true; // Set sectionPrinted to true
                             break;
                         }
                     }
                 }
 
-                if (!sectionPrinted) {
+                if (!sectionPrinted) { // Check if section was not printed
                     cout << hour << endl;
                     cout << "No section assigned" << endl;
                 }
@@ -410,6 +426,7 @@ public:
             }
         }
     }
+
 
 
     void displayRoomTimetable(const Room& room) {
@@ -449,7 +466,8 @@ public:
                             cout << endl;
                         }
                     }
-                } else {
+                }
+                else {
                     // Display cross for empty slot
                     cout << hour << endl;
                     cout << "X" << endl << endl;
@@ -500,13 +518,86 @@ public:
                             cout << endl;
                         }
                     }
-                } else {
+                }
+                else {
                     // Display cross for empty slot
                     cout << hour << endl;
                     cout << "X" << endl << endl;
                 }
             }
         }
+    }
+
+    // Function to write timetable to file
+    void writeTimetableToFile(const string& filename) {
+        ofstream outputFile(filename);
+        if (!outputFile.is_open()) {
+            cerr << "Error: Unable to open output file." << endl;
+            return;
+        }
+
+        const TeacherTimetable& teacherTimetable = timetable.getTeacherTimetable();
+        const SectionTimetable& sectionTimetable = timetable.getSectionTimetable();
+        const CourseTimetable& courseTimetable = timetable.getCourseTimetable();
+        const RoomTimetable& roomTimetable = timetable.getRoomTimetable();
+
+        for (const auto& day : Week().day) {
+            if (day == "Saturday" || day == "Sunday") {
+                continue; // Skip Saturdays and Sundays
+            }
+
+            outputFile << "-------------" << endl;
+            outputFile << day << endl;
+            outputFile << "-------------" << endl;
+
+            for (const auto& hour : TimeStruct().hours) {
+                TimeSlot slot = make_pair(hour, day);
+
+                // Teacher
+                const auto& slot_teachers = teacherTimetable.find(slot);
+                if (slot_teachers != teacherTimetable.end()) {
+                    for (const auto& t : slot_teachers->second) {
+                        outputFile << hour << endl;
+                        outputFile << "Teacher: " << t.getName() << endl;
+
+                        // Display section if available
+                        const auto& slot_sections = sectionTimetable.find(slot);
+                        if (slot_sections != sectionTimetable.end()) {
+                            for (const auto& sec : slot_sections->second) {
+                                for (const auto& s : t.getSections()) {
+                                    if (s->getName() == sec.getName()) {
+                                        outputFile << "Section: " << sec.getName() << endl;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        // Display course and room if available
+                        const auto& slot_courses = courseTimetable.find(slot);
+                        if (slot_courses != courseTimetable.end()) {
+                            outputFile << "Course: " << slot_courses->second.front().getName() << endl;
+                            const auto& slot_rooms = roomTimetable.find(slot);
+                            if (slot_rooms != roomTimetable.end()) {
+                                outputFile << "Room: " << slot_rooms->second.front().getName() << endl;
+                            }
+                        }
+                        else {
+                            outputFile << "No course assigned" << endl;
+                        }
+
+                        outputFile << endl;
+                    }
+                }
+                else {
+                    outputFile << hour << endl;
+                    outputFile << "X" << endl << endl;
+                }
+            }
+        }
+
+        outputFile.close();
+        cout << "Timetable has been written to " << filename << endl;
     }
 };
 
@@ -528,6 +619,9 @@ int main() {
     // Display timetable for a course
     Course course1(1, "Course 1");
     uniSystem.displayCourseTimetable(course1);
+
+    // Write timetable to file
+    uniSystem.writeTimetableToFile("timetable.txt");
 
     return 0;
 }
