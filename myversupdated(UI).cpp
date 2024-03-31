@@ -603,6 +603,8 @@ public:
 };
 
 int main() {
+
+    cout<<"You are My sunshine,My only sunshine..."<<endl;
     UniversitySystem uniSystem;
 
     // Main loop
