@@ -421,12 +421,11 @@ public:
                 if (!sectionPrinted) { // Check if section was not printed
                     cout << hour << endl;
                     cout << "No section assigned" << endl;
+                    break; // No need to continue checking for this day if section is not assigned
                 }
-                cout << endl;
             }
-        }
+        }   
     }
-
 
 
     void displayRoomTimetable(const Room& room) {
