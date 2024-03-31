@@ -422,11 +422,12 @@ public:
                 if (!sectionPrinted) { // Check if section was not printed
                     cout << hour << endl;
                     cout << "No section assigned" << endl;
-                    break; // No need to continue checking for this day if section is not assigned
                 }
+                cout << endl;
             }
-        }   
+        }
     }
+
 
 
     void displayRoomTimetable(const Room& room) {
@@ -602,26 +603,95 @@ public:
 };
 
 int main() {
+
+    cout<<"You are My sunshine,My only sunshine..."<<endl;
     UniversitySystem uniSystem;
 
-    // Display timetable for a teacher
-    Teacher teacher1(1, "Teacher 1");
-    uniSystem.displayTeacherTimetable(teacher1);
+    // Main loop
+    while (true) {
+        cout << "Choose an option:" << endl;
+        cout << "1. Display timetable for a teacher" << endl;
+        cout << "2. Display timetable for a section" << endl;
+        cout << "3. Display timetable for a room" << endl;
+        cout << "4. Display timetable for a course" << endl;
+        cout << "5. Write timetable to file" << endl;
+        cout << "6. Exit" << endl;
 
-    // Display timetable for a section
-    Section section1('A');
-    uniSystem.displaySectionTimetable(section1);
+        int option;
+        cout << "Enter your choice: ";
 
-    // Display timetable for a room
-    Room room1("Room 1");
-    uniSystem.displayRoomTimetable(room1);
+        // Add numeric limit and clear buffer
+        cin >> option;
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-    // Display timetable for a course
-    Course course1(1, "Course 1");
-    uniSystem.displayCourseTimetable(course1);
-
-    // Write timetable to file
-    uniSystem.writeTimetableToFile("timetable.txt");
+        switch (option) {
+        case 1: {
+            // Display timetable for a teacher
+            int teacherId;
+            bool validId = false;
+            while (!validId) {
+                cout << "Enter teacher ID (1-8): ";
+                cin >> teacherId;
+                if (cin.fail() || teacherId < 1 || teacherId > 8) {
+                    cout << "Invalid ID. Please enter a number between 1 and 8." << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                }
+                else {
+                    validId = true;
+                }
+            }
+            Teacher teacher(teacherId, ""); // Temporarily create a teacher with a blank name
+            uniSystem.displayTeacherTimetable(teacher);
+            break;
+        }
+        case 2: {
+            // Display timetable for a section
+            char sectionName;
+            cout << "Enter section name (A-E): ";
+            cin >> sectionName;
+            Section section(sectionName);
+            uniSystem.displaySectionTimetable(section);
+            break;
+        }
+        case 3: {
+            // Display timetable for a room
+            string roomName;
+            cout << "Enter room name: ";
+            cin >> roomName;
+            Room room(roomName);
+            uniSystem.displayRoomTimetable(room);
+            break;
+        }
+        case 4: {
+            // Display timetable for a course
+            int courseId;
+            cout << "Enter course ID: ";
+            cin >> courseId;
+            Course course(courseId, "");
+            uniSystem.displayCourseTimetable(course);
+            break;
+        }
+        case 5: {
+            // Write timetable to file
+            string filename;
+            cout << "Enter filename to write timetable: ";
+            cin >> filename;
+            uniSystem.writeTimetableToFile(filename);
+            break;
+        }
+        case 6: {
+            // Exit the program
+            cout << "Exiting program. Goodbye!" << endl;
+            return 0;
+        }
+        default: {
+            cout << "Invalid option. Please choose a valid option." << endl;
+            break;
+        }
+        }
+    }
 
     return 0;
 }
