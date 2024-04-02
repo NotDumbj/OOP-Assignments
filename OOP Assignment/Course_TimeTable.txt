@@ -1,0 +1,145 @@
+Timetable for Section: Section A
+
+Day Monday, Time Slot 08:00 - 09:30: Object Oriented Programming - Room: Room 4-19
+Day Monday, Time Slot 09:45 - 11:15: Islamic Studies - Room: Room 4-18
+Day Monday, Time Slot 11:30 - 01:00: Object Oriented Programming - Room: Lab 4-02
+Day Monday, Time Slot 01:15 - 02:45: Object Oriented Programming - Room: Lab 4-01
+Day Monday, Time Slot 03:00 - 04:30: Object Oriented Programming - Room: Room 4-19
+Day Tuesday, Time Slot 08:00 - 09:30: Object Oriented Programming - Room: Lab 4-02
+Day Tuesday, Time Slot 09:45 - 11:15: Object Oriented Programming - Room: Room 4-19
+Day Tuesday, Time Slot 11:30 - 01:00: Object Oriented Programming - Room: Room 4-19
+Day Tuesday, Time Slot 01:15 - 02:45: Understanding Quran - Room: Lab 4-01
+Day Tuesday, Time Slot 03:00 - 04:30: Understanding Quran - Room: Room 4-19
+Day Wednesday, Time Slot 08:00 - 09:30: Object Oriented Programming - Room: Lab 4-02
+Day Wednesday, Time Slot 09:45 - 11:15: Islamic Studies - Room: Lab 4-02
+Day Wednesday, Time Slot 11:30 - 01:00: Object Oriented Programming - Room: Room 4-19
+Day Wednesday, Time Slot 01:15 - 02:45: Islamic Studies - Room: Lab 4-02
+Day Wednesday, Time Slot 03:00 - 04:30: Understanding Quran - Room: Lab 4-01
+Day Thursday, Time Slot 08:00 - 09:30: Object Oriented Programming - Room: Room 4-19
+Day Thursday, Time Slot 09:45 - 11:15: Object Oriented Programming - Room: Room 4-19
+Day Thursday, Time Slot 11:30 - 01:00: Object Oriented Programming - Room: Lab 4-02
+Day Thursday, Time Slot 01:15 - 02:45: Object Oriented Programming - Room: Lab 4-02
+Day Thursday, Time Slot 03:00 - 04:30: Object Oriented Programming - Room: Room 4-19
+Day Friday, Time Slot 08:00 - 09:30: Islamic Studies - Room: Lab 4-02
+Day Friday, Time Slot 09:45 - 11:15: Object Oriented Programming - Room: Lab 4-01
+Day Friday, Time Slot 11:30 - 01:00: OOP Lab - Room: Room 4-19
+Day Friday, Time Slot 01:15 - 02:45: OOP Lab - Room: Room 4-19
+Day Friday, Time Slot 03:00 - 04:30: Islamic Studies - Room: Room 4-18
+
+
+Timetable for Section: Section B
+
+Day Monday, Time Slot 08:00 - 09:30: Linear Algebra - Room: Room 4-17
+Day Monday, Time Slot 09:45 - 11:15: OOP Lab - Room: Lab 4-02
+Day Monday, Time Slot 11:30 - 01:00: Linear Algebra - Room: Room 4-19
+Day Monday, Time Slot 01:15 - 02:45: Linear Algebra - Room: Room 4-18
+Day Monday, Time Slot 03:00 - 04:30: Linear Algebra - Room: Room 4-17
+Day Tuesday, Time Slot 08:00 - 09:30: OOP Lab - Room: Lab 4-01
+Day Tuesday, Time Slot 09:45 - 11:15: Linear Algebra - Room: Room 4-18
+Day Tuesday, Time Slot 11:30 - 01:00: Linear Algebra - Room: Lab 4-02
+Day Tuesday, Time Slot 01:15 - 02:45: Linear Algebra - Room: Room 4-19
+Day Tuesday, Time Slot 03:00 - 04:30: Linear Algebra - Room: Room 4-17
+Day Wednesday, Time Slot 08:00 - 09:30: Linear Algebra - Room: Room 4-18
+Day Wednesday, Time Slot 09:45 - 11:15: Linear Algebra - Room: Room 4-19
+Day Wednesday, Time Slot 11:30 - 01:00: Linear Algebra - Room: Room 4-18
+Day Wednesday, Time Slot 01:15 - 02:45: Linear Algebra - Room: Room 4-19
+Day Wednesday, Time Slot 03:00 - 04:30: Linear Algebra - Room: Room 4-19
+Day Thursday, Time Slot 08:00 - 09:30: Linear Algebra - Room: Room 4-17
+Day Thursday, Time Slot 09:45 - 11:15: Linear Algebra - Room: Room 4-17
+Day Thursday, Time Slot 11:30 - 01:00: Linear Algebra - Room: Room 4-18
+Day Thursday, Time Slot 01:15 - 02:45: Linear Algebra - Room: Room 4-19
+Day Thursday, Time Slot 03:00 - 04:30: Linear Algebra - Room: Room 4-18
+Day Friday, Time Slot 08:00 - 09:30: OOP Lab - Room: Room 4-19
+Day Friday, Time Slot 09:45 - 11:15: Linear Algebra - Room: Room 4-19
+Day Friday, Time Slot 11:30 - 01:00: Linear Algebra - Room: Room 4-17
+Day Friday, Time Slot 01:15 - 02:45: Linear Algebra - Room: Room 4-17
+Day Friday, Time Slot 03:00 - 04:30: OOP Lab - Room: Lab 4-02
+
+
+Timetable for Section: Section C
+
+Day Monday, Time Slot 08:00 - 09:30: Discrete Structure - Room: Lab 4-01
+Day Monday, Time Slot 09:45 - 11:15: Understanding Quran - Room: Room 4-19
+Day Monday, Time Slot 11:30 - 01:00: Discrete Structure - Room: Room 4-17
+Day Monday, Time Slot 01:15 - 02:45: Discrete Structure - Room: Lab 4-02
+Day Monday, Time Slot 03:00 - 04:30: Discrete Structure - Room: Room 4-18
+Day Tuesday, Time Slot 08:00 - 09:30: Discrete Structure - Room: Room 4-17
+Day Tuesday, Time Slot 09:45 - 11:15: Discrete Structure - Room: Room 4-17
+Day Tuesday, Time Slot 11:30 - 01:00: Discrete Structure - Room: Room 4-17
+Day Tuesday, Time Slot 01:15 - 02:45: Discrete Structure - Room: Room 4-17
+Day Tuesday, Time Slot 03:00 - 04:30: Discrete Structure - Room: Room 4-18
+Day Wednesday, Time Slot 08:00 - 09:30: Discrete Structure - Room: Room 4-17
+Day Wednesday, Time Slot 09:45 - 11:15: Islamic Studies - Room: Room 4-17
+Day Wednesday, Time Slot 11:30 - 01:00: Discrete Structure - Room: Room 4-17
+Day Wednesday, Time Slot 01:15 - 02:45: Discrete Structure - Room: Room 4-17
+Day Wednesday, Time Slot 03:00 - 04:30: Discrete Structure - Room: Room 4-17
+Day Thursday, Time Slot 08:00 - 09:30: Discrete Structure - Room: Lab 4-01
+Day Thursday, Time Slot 09:45 - 11:15: Discrete Structure - Room: Room 4-18
+Day Thursday, Time Slot 11:30 - 01:00: Discrete Structure - Room: Room 4-17
+Day Thursday, Time Slot 01:15 - 02:45: Islamic Studies - Room: Room 4-17
+Day Thursday, Time Slot 03:00 - 04:30: Discrete Structure - Room: Room 4-17
+Day Friday, Time Slot 08:00 - 09:30: Discrete Structure - Room: Room 4-17
+Day Friday, Time Slot 09:45 - 11:15: Discrete Structure - Room: Room 4-17
+Day Friday, Time Slot 11:30 - 01:00: Discrete Structure - Room: Lab 4-01
+Day Friday, Time Slot 01:15 - 02:45: Discrete Structure - Room: Lab 4-01
+Day Friday, Time Slot 03:00 - 04:30: Understanding Quran - Room: Room 4-19
+
+
+Timetable for Section: Section D
+
+Day Monday, Time Slot 08:00 - 09:30: Effective Communication Skills - Room: Room 4-18
+Day Monday, Time Slot 09:45 - 11:15: Object Oriented Programming - Room: Room 4-17
+Day Monday, Time Slot 11:30 - 01:00: Effective Communication Skills - Room: Lab 4-01
+Day Monday, Time Slot 01:15 - 02:45: Effective Communication Skills - Room: Room 4-19
+Day Monday, Time Slot 03:00 - 04:30: OOP Lab - Room: Lab 4-02
+Day Tuesday, Time Slot 08:00 - 09:30: Effective Communication Skills - Room: Room 4-19
+Day Tuesday, Time Slot 09:45 - 11:15: Effective Communication Skills - Room: Lab 4-02
+Day Tuesday, Time Slot 11:30 - 01:00: Effective Communication Skills - Room: Lab 4-01
+Day Tuesday, Time Slot 01:15 - 02:45: Effective Communication Skills - Room: Lab 4-02
+Day Tuesday, Time Slot 03:00 - 04:30: Effective Communication Skills - Room: Lab 4-01
+Day Wednesday, Time Slot 08:00 - 09:30: Effective Communication Skills - Room: Room 4-19
+Day Wednesday, Time Slot 09:45 - 11:15: Effective Communication Skills - Room: Room 4-18
+Day Wednesday, Time Slot 11:30 - 01:00: Effective Communication Skills - Room: Lab 4-02
+Day Wednesday, Time Slot 01:15 - 02:45: Effective Communication Skills - Room: Room 4-18
+Day Wednesday, Time Slot 03:00 - 04:30: Effective Communication Skills - Room: Lab 4-02
+Day Thursday, Time Slot 08:00 - 09:30: Effective Communication Skills - Room: Lab 4-02
+Day Thursday, Time Slot 09:45 - 11:15: Effective Communication Skills - Room: Lab 4-01
+Day Thursday, Time Slot 11:30 - 01:00: OOP Lab - Room: Room 4-19
+Day Thursday, Time Slot 01:15 - 02:45: Effective Communication Skills - Room: Room 4-18
+Day Thursday, Time Slot 03:00 - 04:30: Effective Communication Skills - Room: Lab 4-02
+Day Friday, Time Slot 08:00 - 09:30: Effective Communication Skills - Room: Room 4-18
+Day Friday, Time Slot 09:45 - 11:15: OOP Lab - Room: Lab 4-02
+Day Friday, Time Slot 11:30 - 01:00: Effective Communication Skills - Room: Lab 4-02
+Day Friday, Time Slot 01:15 - 02:45: Effective Communication Skills - Room: Room 4-18
+Day Friday, Time Slot 03:00 - 04:30: Introduction to Software Engineering - Room: Room 4-17
+
+
+Timetable for Section: Section E
+
+Day Monday, Time Slot 08:00 - 09:30: Introduction to Software Engineering - Room: Lab 4-02
+Day Monday, Time Slot 09:45 - 11:15: Linear Algebra - Room: Lab 4-01
+Day Monday, Time Slot 11:30 - 01:00: Introduction to Software Engineering - Room: Room 4-18
+Day Monday, Time Slot 01:15 - 02:45: Introduction to Software Engineering - Room: Room 4-17
+Day Monday, Time Slot 03:00 - 04:30: Introduction to Software Engineering - Room: Lab 4-01
+Day Tuesday, Time Slot 08:00 - 09:30: Introduction to Software Engineering - Room: Room 4-18
+Day Tuesday, Time Slot 09:45 - 11:15: OOP Lab - Room: Lab 4-01
+Day Tuesday, Time Slot 11:30 - 01:00: Introduction to Software Engineering - Room: Room 4-18
+Day Tuesday, Time Slot 01:15 - 02:45: Introduction to Software Engineering - Room: Room 4-18
+Day Tuesday, Time Slot 03:00 - 04:30: Introduction to Software Engineering - Room: Lab 4-02
+Day Wednesday, Time Slot 08:00 - 09:30: Introduction to Software Engineering - Room: Lab 4-01
+Day Wednesday, Time Slot 09:45 - 11:15: Introduction to Software Engineering - Room: Lab 4-01
+Day Wednesday, Time Slot 11:30 - 01:00: Introduction to Software Engineering - Room: Lab 4-01
+Day Wednesday, Time Slot 01:15 - 02:45: Introduction to Software Engineering - Room: Lab 4-01
+Day Wednesday, Time Slot 03:00 - 04:30: Introduction to Software Engineering - Room: Room 4-18
+Day Thursday, Time Slot 08:00 - 09:30: Understanding Quran - Room: Room 4-18
+Day Thursday, Time Slot 09:45 - 11:15: Introduction to Software Engineering - Room: Lab 4-02
+Day Thursday, Time Slot 11:30 - 01:00: Introduction to Software Engineering - Room: Lab 4-01
+Day Thursday, Time Slot 01:15 - 02:45: OOP Lab - Room: Lab 4-01
+Day Thursday, Time Slot 03:00 - 04:30: Introduction to Software Engineering - Room: Lab 4-01
+Day Friday, Time Slot 08:00 - 09:30: Introduction to Software Engineering - Room: Lab 4-01
+Day Friday, Time Slot 09:45 - 11:15: Introduction to Software Engineering - Room: Room 4-18
+Day Friday, Time Slot 11:30 - 01:00: Introduction to Software Engineering - Room: Room 4-18
+Day Friday, Time Slot 01:15 - 02:45: Introduction to Software Engineering - Room: Lab 4-02
+Day Friday, Time Slot 03:00 - 04:30: Linear Algebra - Room: Lab 4-01
+
+

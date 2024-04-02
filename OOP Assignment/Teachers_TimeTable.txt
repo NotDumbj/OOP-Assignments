@@ -1,0 +1,82 @@
+Timetable for Teacher: Sir Tamim (Object Oriented Programming)
+
+Day Monday, Time Slot 08:00 - 09:30: Section A in Room 4-19
+Day Monday, Time Slot 09:45 - 11:15: Section D in Room 4-17
+Day Monday, Time Slot 11:30 - 01:00: Section A in Lab 4-02
+Day Monday, Time Slot 01:15 - 02:45: Section A in Lab 4-01
+Day Monday, Time Slot 03:00 - 04:30: Section A in Room 4-19
+Day Tuesday, Time Slot 08:00 - 09:30: Section A in Lab 4-02
+Day Tuesday, Time Slot 09:45 - 11:15: Section A in Room 4-19
+Day Tuesday, Time Slot 11:30 - 01:00: Section A in Room 4-19
+Day Wednesday, Time Slot 08:00 - 09:30: Section A in Lab 4-02
+Day Wednesday, Time Slot 11:30 - 01:00: Section A in Room 4-19
+Day Thursday, Time Slot 08:00 - 09:30: Section A in Room 4-19
+Day Thursday, Time Slot 09:45 - 11:15: Section A in Room 4-19
+Day Thursday, Time Slot 11:30 - 01:00: Section A in Lab 4-02
+Day Thursday, Time Slot 01:15 - 02:45: Section A in Lab 4-02
+Day Thursday, Time Slot 03:00 - 04:30: Section A in Room 4-19
+Day Friday, Time Slot 09:45 - 11:15: Section A in Lab 4-01
+Timetable for Teacher: Sir Tamim (Object Oriented Programming)
+
+Day Monday, Time Slot 08:00 - 09:30: Section A in Room 4-19
+Day Monday, Time Slot 09:45 - 11:15: Section D in Room 4-17
+Day Monday, Time Slot 11:30 - 01:00: Section A in Lab 4-02
+Day Monday, Time Slot 01:15 - 02:45: Section A in Lab 4-01
+Day Monday, Time Slot 03:00 - 04:30: Section A in Room 4-19
+Day Tuesday, Time Slot 08:00 - 09:30: Section A in Lab 4-02
+Day Tuesday, Time Slot 09:45 - 11:15: Section A in Room 4-19
+Day Tuesday, Time Slot 11:30 - 01:00: Section A in Room 4-19
+Day Wednesday, Time Slot 08:00 - 09:30: Section A in Lab 4-02
+Day Wednesday, Time Slot 11:30 - 01:00: Section A in Room 4-19
+Day Thursday, Time Slot 08:00 - 09:30: Section A in Room 4-19
+Day Thursday, Time Slot 09:45 - 11:15: Section A in Room 4-19
+Day Thursday, Time Slot 11:30 - 01:00: Section A in Lab 4-02
+Day Thursday, Time Slot 01:15 - 02:45: Section A in Lab 4-02
+Day Thursday, Time Slot 03:00 - 04:30: Section A in Room 4-19
+Day Friday, Time Slot 09:45 - 11:15: Section A in Lab 4-01
+Timetable for Teacher: Dr Awais Majeed (Introduction to Software Engineering)
+
+Day Monday, Time Slot 08:00 - 09:30: Section E in Lab 4-02
+Day Monday, Time Slot 11:30 - 01:00: Section E in Room 4-18
+Day Monday, Time Slot 01:15 - 02:45: Section E in Room 4-17
+Day Monday, Time Slot 03:00 - 04:30: Section E in Lab 4-01
+Day Tuesday, Time Slot 08:00 - 09:30: Section E in Room 4-18
+Day Tuesday, Time Slot 11:30 - 01:00: Section E in Room 4-18
+Day Tuesday, Time Slot 01:15 - 02:45: Section E in Room 4-18
+Day Tuesday, Time Slot 03:00 - 04:30: Section E in Lab 4-02
+Day Wednesday, Time Slot 08:00 - 09:30: Section E in Lab 4-01
+Day Wednesday, Time Slot 09:45 - 11:15: Section E in Lab 4-01
+Day Wednesday, Time Slot 11:30 - 01:00: Section E in Lab 4-01
+Day Wednesday, Time Slot 01:15 - 02:45: Section E in Lab 4-01
+Day Wednesday, Time Slot 03:00 - 04:30: Section E in Room 4-18
+Day Thursday, Time Slot 09:45 - 11:15: Section E in Lab 4-02
+Day Thursday, Time Slot 11:30 - 01:00: Section E in Lab 4-01
+Day Thursday, Time Slot 03:00 - 04:30: Section E in Lab 4-01
+Day Friday, Time Slot 08:00 - 09:30: Section E in Lab 4-01
+Day Friday, Time Slot 09:45 - 11:15: Section E in Room 4-18
+Day Friday, Time Slot 11:30 - 01:00: Section E in Room 4-18
+Day Friday, Time Slot 01:15 - 02:45: Section E in Lab 4-02
+Day Friday, Time Slot 03:00 - 04:30: Section D in Room 4-17
+Timetable for Teacher: Dr Awais Majeed (Introduction to Software Engineering)
+
+Day Monday, Time Slot 08:00 - 09:30: Section E in Lab 4-02
+Day Monday, Time Slot 11:30 - 01:00: Section E in Room 4-18
+Day Monday, Time Slot 01:15 - 02:45: Section E in Room 4-17
+Day Monday, Time Slot 03:00 - 04:30: Section E in Lab 4-01
+Day Tuesday, Time Slot 08:00 - 09:30: Section E in Room 4-18
+Day Tuesday, Time Slot 11:30 - 01:00: Section E in Room 4-18
+Day Tuesday, Time Slot 01:15 - 02:45: Section E in Room 4-18
+Day Tuesday, Time Slot 03:00 - 04:30: Section E in Lab 4-02
+Day Wednesday, Time Slot 08:00 - 09:30: Section E in Lab 4-01
+Day Wednesday, Time Slot 09:45 - 11:15: Section E in Lab 4-01
+Day Wednesday, Time Slot 11:30 - 01:00: Section E in Lab 4-01
+Day Wednesday, Time Slot 01:15 - 02:45: Section E in Lab 4-01
+Day Wednesday, Time Slot 03:00 - 04:30: Section E in Room 4-18
+Day Thursday, Time Slot 09:45 - 11:15: Section E in Lab 4-02
+Day Thursday, Time Slot 11:30 - 01:00: Section E in Lab 4-01
+Day Thursday, Time Slot 03:00 - 04:30: Section E in Lab 4-01
+Day Friday, Time Slot 08:00 - 09:30: Section E in Lab 4-01
+Day Friday, Time Slot 09:45 - 11:15: Section E in Room 4-18
+Day Friday, Time Slot 11:30 - 01:00: Section E in Room 4-18
+Day Friday, Time Slot 01:15 - 02:45: Section E in Lab 4-02
+Day Friday, Time Slot 03:00 - 04:30: Section D in Room 4-17
