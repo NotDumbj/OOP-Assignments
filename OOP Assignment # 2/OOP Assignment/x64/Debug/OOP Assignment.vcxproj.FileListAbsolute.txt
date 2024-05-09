@@ -1,0 +1,7 @@
+C:\Users\Shop\source\repos\OOP Assignment\OOP Assignment\x64\Debug\OOP Assignment.vcxproj.AssemblyReference.cache
+C:\Users\Shop\source\repos\OOP Assignment\OOP Assignment\x64\Debug\OOPAssignment.MyForm.resources
+C:\Users\Shop\source\repos\OOP Assignment\OOP Assignment\x64\Debug\OOP Assignment.vcxproj.GenerateResource.cache
+E:\Coding Stufff\OOP Assignment\OOP Assignment\x64\Debug\OOP Assignment.vcxproj.AssemblyReference.cache
+E:\Coding Stufff\OOP Assignment\OOP Assignment\x64\Debug\OOP Assignment.vcxproj.GenerateResource.cache
+E:\Coding Stufff\OOP Assignment\OOP Assignment\x64\Debug\OOPAssignment.MainM.resources
+E:\Coding Stufff\OOP Assignment\OOP Assignment\x64\Debug\OOPAssignment.ShowWin.resources

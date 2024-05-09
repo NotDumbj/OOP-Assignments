@@ -1,0 +1,9 @@
+﻿  MainM.cpp
+E:\Coding Stufff\OOP Assignment\OOP Assignment\Rebuild.h(1009): warning C4715: 'Admin::se_nameCheck': not all control paths return a value
+E:\Coding Stufff\OOP Assignment\OOP Assignment\Rebuild.h(948): warning C4715: 'Admin::makeStudent': not all control paths return a value
+E:\Coding Stufff\OOP Assignment\OOP Assignment\Rebuild.h(998): warning C4715: 'Admin::makeCourse': not all control paths return a value
+E:\Coding Stufff\OOP Assignment\OOP Assignment\Rebuild.h(1049): warning C4715: 'Admin::makeRoom': not all control paths return a value
+E:\Coding Stufff\OOP Assignment\OOP Assignment\Rebuild.h(971): warning C4715: 'Admin::makeTeacher': not all control paths return a value
+E:\Coding Stufff\OOP Assignment\OOP Assignment\Rebuild.h(1025): warning C4715: 'Admin::makeSection': not all control paths return a value
+  MainM.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  OOP Assignment.vcxproj -> E:\Coding Stufff\OOP Assignment\x64\Debug\OOP Assignment.exe
