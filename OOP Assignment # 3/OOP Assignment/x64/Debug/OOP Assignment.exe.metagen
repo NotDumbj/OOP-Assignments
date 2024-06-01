@@ -1,0 +1,158 @@
+  OOPAssignment.MainM.resources - Embedded, ContainedInManifestFile, 
+  OOPAssignment.ShowWin.resources - Embedded, ContainedInManifestFile, 
+ImageRuntimeVersion: v4.0.30319
+Assembly OOP Assignment, Version=0.0.*, Culture=Invariant Language (Invariant Country): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Class Person: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getname(): PrivateScope, Public, HideBySig
+    setname(String): PrivateScope, Public, HideBySig
+Class Course: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    setName(String): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    setteacher(Teacher): PrivateScope, Public, HideBySig
+    addSection(Section): PrivateScope, Public, HideBySig
+    getSections(): PrivateScope, Public, HideBySig
+    getTeacher(): PrivateScope, Public, HideBySig
+Class Section: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    addStudent(Student): PrivateScope, Public, HideBySig
+    addCourse(Course): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    setName(String): PrivateScope, Public, HideBySig
+    getCourses(): PrivateScope, Public, HideBySig
+    getStudents(): PrivateScope, Public, HideBySig
+Class Teacher: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Person
+    Void .ctor(System.String, Int32, Course): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String, Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    getcourse(): PrivateScope, Public, HideBySig
+    setcourse(Course): PrivateScope, Public, HideBySig
+    setId(Int32): PrivateScope, Public, HideBySig
+    getId(): PrivateScope, Public, HideBySig
+Class Student: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :Person
+    Void .ctor(Int32, System.String, Section): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(Int32): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    setSection(Section): PrivateScope, Public, HideBySig
+    getSection(): PrivateScope, Public, HideBySig
+    setRegno(Int32): PrivateScope, Public, HideBySig
+    getRegno(): PrivateScope, Public, HideBySig
+Class TimeSlot: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String, System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String day : Public
+    System.String time : Public
+Class Room: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Methods:
+    setName(String): PrivateScope, Public, HideBySig
+    getName(): PrivateScope, Public, HideBySig
+    addTimeSlot(TimeSlot): PrivateScope, Public, HideBySig
+    getTimeSlots(): PrivateScope, Public, HideBySig
+Class Timetable: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(TimeSlot, Room, Section, Course): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    Int32 id : Public
+    TimeSlot timeslot : Public
+    Room room : Public
+    Section section : Public
+    Course course : Public
+    Int32 num : Public, Static
+  Properties:
+    System.String CourseName 'get ' : 
+    System.String SectionName 'get ' : 
+    System.String RoomName 'get ' : 
+    System.String Time 'get ' : 
+    System.String Day 'get ' : 
+  Methods:
+    get_Day(): PrivateScope, Public, HideBySig, SpecialName
+    get_Time(): PrivateScope, Public, HideBySig, SpecialName
+    get_RoomName(): PrivateScope, Public, HideBySig, SpecialName
+    get_SectionName(): PrivateScope, Public, HideBySig, SpecialName
+    get_CourseName(): PrivateScope, Public, HideBySig, SpecialName
+    getId(): PrivateScope, Public, HideBySig
+    setId(Int32): PrivateScope, Public, HideBySig
+Class TimeTableManager: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.IDisposable
+  Fields:
+    System.Collections.Generic.List`1[Student] students : Public
+    System.Collections.Generic.List`1[Teacher] teachers : Public
+    System.Collections.Generic.List`1[Course] courses : Public
+    System.Collections.Generic.List`1[Room] rooms : Public
+    System.Collections.Generic.List`1[Section] sections : Public
+    System.Collections.Generic.List`1[Timetable] timetables : Public
+  Methods:
+    makeTimetable(): PrivateScope, Public, HideBySig
+    addTimetableEntry(TimeSlot, Course, Section, Room): PrivateScope, Public, HideBySig
+    timetableByCourse(Course): PrivateScope, Public, HideBySig
+    timetableByTeacher(Teacher): PrivateScope, Public, HideBySig
+    timetableByRoom(Room): PrivateScope, Public, HideBySig
+    timetableBySection(Section): PrivateScope, Public, HideBySig
+    addStudent(Student): PrivateScope, Public, HideBySig
+    addTeacher(Teacher): PrivateScope, Public, HideBySig
+    addCourse(Course): PrivateScope, Public, HideBySig
+    addRoom(Room): PrivateScope, Public, HideBySig
+    addSection(Section): PrivateScope, Public, HideBySig
+    addTimetable(Timetable): PrivateScope, Public, HideBySig
+    deleteStudent(String): PrivateScope, Public, HideBySig
+    deleteTeacher(String): PrivateScope, Public, HideBySig
+    deleteCourse(String): PrivateScope, Public, HideBySig
+    deleteRoom(String): PrivateScope, Public, HideBySig
+    deleteSection(String): PrivateScope, Public, HideBySig
+    deleteTimetable(Timetable): PrivateScope, Public, HideBySig
+    changeTimetableEntry(Timetable, TimeSlot, Room, Course, Section): PrivateScope, Public, HideBySig
+    readAllDB(): PrivateScope, Public, HideBySig
+    readStudents(): PrivateScope, Public, HideBySig
+    readTeachers(): PrivateScope, Public, HideBySig
+    readCourses(): PrivateScope, Public, HideBySig
+    readRooms(): PrivateScope, Public, HideBySig
+    readSections(): PrivateScope, Public, HideBySig
+    readTimetables(): PrivateScope, Public, HideBySig
+    addTimeslot(Room, TimeSlot): PrivateScope, Public, HideBySig
+    swapTeacherwithCourse(Teacher, Course): PrivateScope, Public, HideBySig
+    assignStudenttoSection(Section, Student): PrivateScope, Public, HideBySig
+    assignCoursestoSection(Section, List`1): PrivateScope, Public, HideBySig
+    Dispose(): PrivateScope, Public, Final, Virtual, HideBySig
+Class OOPAssignment.ShowWin: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.Windows.Forms.DataGridView showbox : Public
+Class OOPAssignment.MainM: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    TimeTableManager tt : Public
+  Methods:
+    connecttodatabase(): PrivateScope, Public, HideBySig

@@ -1,0 +1,7 @@
+﻿  MainM.cpp
+E:\Coding Stufff\OOP Assignment\OOP Assignment\MainM.h(2994,20): warning C4101: 'e': unreferenced local variable
+E:\Coding Stufff\OOP Assignment\OOP Assignment\MainM.h(3083,20): warning C4101: 'e': unreferenced local variable
+E:\Coding Stufff\OOP Assignment\OOP Assignment\MainM.h(3111,20): warning C4101: 'e': unreferenced local variable
+E:\Coding Stufff\OOP Assignment\OOP Assignment\Rebuild.h(620): warning C4715: 'TimeTableManager::addTimetable': not all control paths return a value
+  MainM.obj : MSIL module encountered; incremental linking is disabled for MSIL; performing full link
+  OOP Assignment.vcxproj -> E:\Coding Stufff\OOP Assignment\x64\Debug\OOP Assignment.exe
